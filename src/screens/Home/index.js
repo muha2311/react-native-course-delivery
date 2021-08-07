@@ -6,7 +6,7 @@ import styles from "./styles";
 
 
 
-function Home() {
+function Home({navigation}) {
 
 
   const [data, setData] = useState([]);
@@ -35,7 +35,9 @@ const renderItem = (data) => {
         providerName={data.item.owner.login}
         numStars={data.item.stargazers_count}
         numberOfLines={1}
+        onPress={()=>navigation.navigate("Repo",{data:data.item})}
       />
+
     );
   };
 
